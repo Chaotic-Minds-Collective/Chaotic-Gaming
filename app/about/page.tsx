@@ -1,6 +1,12 @@
 export default function About() {
   return (
     <section className="mx-auto max-w-3xl px-6 py-16 md:px-10">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src="https://raw.githubusercontent.com/Chaotic-Minds-Collective/Chaotic-Gaming/main/badge-v3-bold-cyan.png"
+        alt="Chaotic Gaming crest"
+        className="mx-auto mb-10 h-48 w-48 rounded-full shadow-riot"
+      />
       <h1 className="section-title text-3xl font-bold">About Chaotic Gaming</h1>
       <p className="mb-6 mt-5 text-zinc-300">Chaotic Gaming is the gaming division of Chaotic Minds Collective, built on one philosophy:</p>
       <p className="mb-6 text-2xl font-bold grad-text">Community built by gamers, for gamers.</p>
