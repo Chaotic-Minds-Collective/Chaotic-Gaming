@@ -6,6 +6,8 @@ export const metadata = {
   description: "Chaotic Gaming: game servers, events, and community for 7 Days to Die, ARK, Atlas and more. A Chaotic Minds Collective division.",
 };
 
+export const DISCORD_INVITE = "https://discord.gg/SPJ42PCAvD";
+
 const nav = [
   { href: "/games", label: "Games" },
   { href: "/events", label: "Events" },
@@ -31,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </li>
             ))}
           </ul>
-          <a href="#" className="rounded-md bg-riot px-5 py-2 text-sm font-semibold text-white hover:shadow-riot">
+          <a href={DISCORD_INVITE} target="_blank" rel="noopener noreferrer" className="rounded-md bg-riot px-5 py-2 text-sm font-semibold text-white hover:shadow-riot">
             Join Discord
           </a>
         </nav>

@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { games, statusLabel } from "@/lib/games";
 
+const INVITE = "https://discord.gg/SPJ42PCAvD";
+
 const events = [
   { day: "07", month: "NOV", title: "Blood Moon Horde Night", meta: "7 Days to Die - 7PM PST - Discord event" },
   { day: "14", month: "NOV", title: "ARK Base Building Contest", meta: "Community vote - winner gets featured" },
@@ -17,7 +19,7 @@ export default function Home() {
         </h1>
         <p className="mx-auto mt-5 max-w-xl italic text-zinc-400">Community built by gamers, for gamers.</p>
         <div className="mt-9 flex flex-wrap justify-center gap-4">
-          <a href="#" className="btn-cta">Join Our Discord</a>
+          <a href={INVITE} target="_blank" rel="noopener noreferrer" className="btn-cta">Join Our Discord</a>
           <Link href="/games" className="btn-ghost">See Our Servers</Link>
         </div>
       </section>

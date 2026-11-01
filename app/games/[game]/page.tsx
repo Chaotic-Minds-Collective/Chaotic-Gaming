@@ -1,6 +1,8 @@
 import { games } from "@/lib/games";
 import { notFound } from "next/navigation";
 
+const INVITE = "https://discord.gg/SPJ42PCAvD";
+
 export function generateStaticParams() {
   return games.map((g) => ({ game: g.slug }));
 }
@@ -23,7 +25,7 @@ export default function GamePage({ params }: { params: { game: string } }) {
       <p className="mt-4 text-zinc-400">
         Item guides and reference pages for {game.name} are coming soon. Join the Discord hub for community-written tips in the meantime.
       </p>
-      <a href="#" className="btn-cta mt-8">Join the {game.name} Hub</a>
+      <a href={INVITE} target="_blank" rel="noopener noreferrer" className="btn-cta mt-8">Join the {game.name} Hub</a>
     </section>
   );
 }
