@@ -1,7 +1,6 @@
 import { games } from "@/lib/games";
 import { notFound } from "next/navigation";
-
-const INVITE = "https://discord.gg/SPJ42PCAvD";
+import { DISCORD_INVITE } from "@/lib/site";
 
 export function generateStaticParams() {
   return games.map((g) => ({ game: g.slug }));
@@ -11,21 +10,37 @@ export default function GamePage({ params }: { params: { game: string } }) {
   const game = games.find((g) => g.slug === params.game);
   if (!game) notFound();
   return (
-    <section className="mx-auto max-w-3xl px-6 py-16 md:px-10">
-      <span className="text-xs uppercase tracking-widest text-pulse">{game.genre}</span>
-      <h1 className="section-title mt-2 text-4xl font-bold">{game.name}</h1>
-      <p className="mb-8 mt-5 text-zinc-300">{game.blurb}</p>
-      <h2 className="text-xl font-bold text-pulse">Server Details</h2>
-      <ul className="mb-8 mt-4 list-disc space-y-2 pl-5 text-zinc-300">
-        {game.serverInfo.map((s) => (
-          <li key={s}>{s}</li>
-        ))}
-      </ul>
-      <h2 className="text-xl font-bold text-pulse">In-Game Items</h2>
-      <p className="mt-4 text-zinc-400">
-        Item guides and reference pages for {game.name} are coming soon. Join the Discord hub for community-written tips in the meantime.
-      </p>
-      <a href={INVITE} target="_blank" rel="noopener noreferrer" className="btn-cta mt-8">Join the {game.name} Hub</a>
+    <section className="relative overflow-hidden px-6 py-20 md:px-10">
+      <div className="aurora" />
+      <div className="relative mx-auto max-w-3xl">
+        <p className="kicker reveal">{game.genre}</p>
+        <h1 className="reveal d1 mt-3 text-[clamp(34px,5vw,52px)] font-extrabold uppercase leading-tight">
+          <span className="glitch" data-text={game.name}>{game.name}</span>
+        </h1>
+        <div className="section-rule reveal d1" />
+        <p className="reveal d2 mt-7 text-lg text-[var(--text)]">{game.blurb}</p>
+
+        <h2 className="reveal d2 mt-12 text-xl font-bold uppercase tracking-wide text-[var(--pulse)]">Current status</h2>
+        <ul className="reveal d3 mt-5 space-y-3">
+          {game.serverInfo.map((s) => (
+            <li key={s} className="card cut-sm flex items-start gap-4 !p-4">
+              <span className="mt-1 h-2 w-2 shrink-0 bg-[var(--pulse)] shadow-[0_0_10px_var(--pulse)]" />
+              <span className="text-sm text-[var(--muted)]">{s}</span>
+            </li>
+          ))}
+        </ul>
+
+        <h2 className="reveal d3 mt-12 text-xl font-bold uppercase tracking-wide text-[var(--pulse)]">In-game items</h2>
+        <p className="reveal d4 mt-4 text-[var(--muted)]">
+          Item guides and reference pages are coming as the hub grows. Founding members write the first ones - bring your knowledge.
+        </p>
+
+        <div className="reveal d4 mt-12">
+          <a href={DISCORD_INVITE} target="_blank" rel="noopener noreferrer" className="btn-cta">
+            Join the {game.name} hub
+          </a>
+        </div>
+      </div>
     </section>
   );
 }

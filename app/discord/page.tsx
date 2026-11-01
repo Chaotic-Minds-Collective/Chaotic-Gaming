@@ -1,26 +1,57 @@
-const INVITE = "https://discord.gg/SPJ42PCAvD";
+import { DISCORD_INVITE, BADGE } from "@/lib/site";
+
+const rules = [
+  "Be decent. No harassment, hate speech, or targeting.",
+  "No spam, ads, or self-promotion without staff approval.",
+  "Keep game talk in the right hubs.",
+  "Staff decisions are final - appeal in a support ticket.",
+];
 
 export default function Discord() {
   return (
-    <section className="mx-auto max-w-3xl px-6 py-16 md:px-10">
-      <h1 className="section-title text-3xl font-bold">Join the Discord</h1>
-      <p className="mb-8 mt-5 text-zinc-300">
-        The Discord is where the community lives: game hubs, LFG channels, events, and direct support from staff.
-      </p>
-      <a href={INVITE} target="_blank" rel="noopener noreferrer" className="btn-cta">Join Our Discord</a>
-      <h2 className="mt-12 text-xl font-bold text-pulse">How Onboarding Works</h2>
-      <ol className="mt-4 list-decimal space-y-2 pl-5 text-zinc-300">
-        <li>Click the invite and accept the server rules.</li>
-        <li>Pick the games you play - you get access to those hubs automatically.</li>
-        <li>Say hi in #introduce-yourself and jump into voice.</li>
-      </ol>
-      <h2 className="mt-12 text-xl font-bold text-pulse">Community Rules (Short Version)</h2>
-      <ul className="mt-4 list-disc space-y-2 pl-5 text-zinc-300">
-        <li>Be decent. No harassment, hate speech, or targeting.</li>
-        <li>No spam, ads, or self-promotion without staff approval.</li>
-        <li>Keep game talk in the right hubs.</li>
-        <li>Staff decisions are final - appeal in a support ticket.</li>
-      </ul>
+    <section className="relative overflow-hidden px-6 py-20 md:px-10">
+      <div className="aurora" />
+      <div className="relative mx-auto max-w-3xl text-center">
+        <div className="reveal crest-ring mx-auto h-24 w-24">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={BADGE} alt="Chaotic Gaming crest" className="h-full w-full rounded-full" />
+        </div>
+        <p className="kicker reveal d1 mt-8">The gates are open</p>
+        <h1 className="section-title reveal d1 mt-3">Join the Discord</h1>
+        <div className="section-rule reveal d1 mx-auto" />
+        <p className="reveal d2 mt-7 text-[var(--muted)]">
+          The Discord is where the community lives: game hubs, LFG channels, events, and direct support from staff.
+        </p>
+        <div className="reveal d3 mt-9">
+          <a href={DISCORD_INVITE} target="_blank" rel="noopener noreferrer" className="btn-cta">Join Our Discord</a>
+        </div>
+
+        <div className="card cut reveal d3 mt-14 text-left">
+          <span className="kicker">Onboarding</span>
+          <h2 className="mt-3 text-xl font-bold uppercase tracking-wide">How joining works</h2>
+          <ol className="mt-5 space-y-3">
+            {["Click the invite and accept the server rules.", "Pick the games you play - hubs unlock automatically.", "Say hi in #introduce-yourself and jump into voice."].map((s, i) => (
+              <li key={s} className="flex items-start gap-4 text-sm text-[var(--muted)]">
+                <span className="font-display font-bold grad-text">{String(i + 1).padStart(2, "0")}</span>
+                {s}
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="card cut reveal d4 mt-6 text-left">
+          <span className="kicker">The code</span>
+          <h2 className="mt-3 text-xl font-bold uppercase tracking-wide">Rules, short version</h2>
+          <ul className="mt-5 space-y-3">
+            {rules.map((r) => (
+              <li key={r} className="flex items-start gap-4 text-sm text-[var(--muted)]">
+                <span className="mt-1 h-2 w-2 shrink-0 bg-[var(--riot)] shadow-[0_0_10px_var(--riot)]" />
+                {r}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </section>
   );
 }

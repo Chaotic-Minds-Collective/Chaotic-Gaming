@@ -3,20 +3,29 @@ import { games, statusLabel } from "@/lib/games";
 
 export default function Games() {
   return (
-    <section className="mx-auto max-w-5xl px-6 py-16 md:px-10">
-      <h1 className="section-title text-3xl font-bold">Game Communities</h1>
-      <p className="mb-9 mt-3 text-zinc-400">Every game runs its own hub with servers, events, and item guides.</p>
-      <div className="grid gap-6 md:grid-cols-3">
-        {games.map((g) => (
-          <Link key={g.slug} href={`/games/${g.slug}`} className="card block">
-            <span className="text-xs uppercase tracking-widest text-pulse">{g.genre}</span>
-            <h3 className="mb-2 mt-2 text-xl font-bold">{g.name}</h3>
-            <p className="text-sm leading-relaxed text-zinc-400">{g.blurb}</p>
-            <span className={`mt-4 inline-block rounded-full px-3 py-1 text-xs font-semibold ${g.status === "online" ? "bg-pulse/10 text-pulse" : "bg-vio/15 text-vio"}`}>
-              {statusLabel[g.status]}
-            </span>
-          </Link>
-        ))}
+    <section className="relative overflow-hidden px-6 py-20 md:px-10">
+      <div className="aurora" />
+      <div className="relative mx-auto max-w-6xl">
+        <p className="kicker reveal">The roster</p>
+        <h1 className="section-title reveal d1 mt-3">Game communities</h1>
+        <div className="section-rule reveal d1" />
+        <p className="reveal d2 mt-6 max-w-xl text-[var(--muted)]">
+          Every game runs its own Discord hub with LFG, tips, and plans for a dedicated server.
+        </p>
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {games.map((g, i) => (
+            <Link key={g.slug} href={`/games/${g.slug}`} className={`card cut block reveal d${i + 2}`}>
+              <div className="mb-5 flex h-28 items-center justify-center overflow-hidden border border-[rgba(160,32,240,0.25)]"
+                   style={{ background: `radial-gradient(ellipse at 30% 20%, rgba(160,32,240,0.35), transparent 60%), radial-gradient(ellipse at 80% 90%, rgba(0,229,255,0.25), transparent 55%), repeating-linear-gradient(45deg, rgba(255,255,255,0.03) 0 2px, transparent 2px 14px)` }}>
+                <span className="font-gothic text-5xl">{g.name.charAt(0)}</span>
+              </div>
+              <span className="kicker">{g.genre}</span>
+              <h3 className="mt-2 text-xl font-bold uppercase tracking-wide">{g.name}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-[var(--muted)]">{g.blurb}</p>
+              <span className="pill mt-5">{statusLabel[g.status]}</span>
+            </Link>
+          ))}
+        </div>
       </div>
     </section>
   );
