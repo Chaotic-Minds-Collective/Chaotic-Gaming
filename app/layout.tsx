@@ -1,12 +1,11 @@
 import Link from "next/link";
+import { DISCORD_INVITE } from "@/lib/site";
 import "./globals.css";
 
 export const metadata = {
   title: "Chaotic Gaming - Community built by gamers, for gamers",
   description: "Chaotic Gaming: game servers, events, and community for 7 Days to Die, ARK, Atlas and more. A Chaotic Minds Collective division.",
 };
-
-export const DISCORD_INVITE = "https://discord.gg/SPJ42PCAvD";
 
 const nav = [
   { href: "/games", label: "Games" },
