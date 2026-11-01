@@ -1,28 +1,26 @@
-const events = [
-  { day: "07", month: "NOV", title: "Blood Moon Horde Night", meta: "7 Days to Die - 7PM PST - Discord event" },
-  { day: "14", month: "NOV", title: "ARK Base Building Contest", meta: "Community vote - winner gets featured" },
-  { day: "21", month: "NOV", title: "Community Game Night", meta: "Variety night - pick the game in Discord" },
-];
+import Link from "next/link";
 
 export default function Events() {
   return (
     <section className="mx-auto max-w-4xl px-6 py-16 md:px-10">
-      <h1 className="section-title text-3xl font-bold">Events Calendar</h1>
-      <p className="mb-9 mt-3 text-zinc-400">Game nights, contests, and community hangouts. All times in PST.</p>
-      {events.map((e) => (
-        <div key={e.title} className="mb-4 flex items-center gap-6 rounded-lg border-l-[3px] border-pulse bg-coal px-6 py-5">
-          <div className="min-w-[90px] text-center text-3xl font-extrabold text-riot">
-            {e.day}
-            <small className="block text-xs tracking-widest text-zinc-500">{e.month}</small>
-          </div>
-          <div>
-            <strong>{e.title}</strong>
-            <br />
-            <span className="text-sm text-zinc-400">{e.meta}</span>
-          </div>
-        </div>
-      ))}
-      <p className="mt-8 text-sm text-zinc-500">Events sync with our Discord automatically once the Chaotic Command bot is live.</p>
+      <h1 className="section-title text-3xl font-bold">Events</h1>
+      <p className="mb-8 mt-5 text-zinc-300">
+        We are a brand-new community, so our event calendar is just getting started. The first game nights and contests
+        will be voted on and announced in Discord.
+      </p>
+      <div className="card">
+        <h2 className="text-xl font-bold text-pulse">Want a say in our first events?</h2>
+        <p className="mt-3 text-zinc-400">
+          Join the Discord and drop your ideas in the events channel. Founding members pick what we play first.
+        </p>
+        <a href="https://discord.gg/SPJ42PCAvD" target="_blank" rel="noopener noreferrer" className="btn-cta mt-6">
+          Join the Discord
+        </a>
+      </div>
+      <p className="mt-8 text-sm text-zinc-500">
+        This page will fill up with a real event calendar as events are scheduled, and will sync with Discord events
+        once the Chaotic Command bot is live.
+      </p>
     </section>
   );
 }
