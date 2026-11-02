@@ -17,8 +17,8 @@ export default function About() {
         </p>
         <p className="reveal d2 font-gothic mt-5 text-4xl grad-text">Community built by gamers, for gamers.</p>
         <p className="reveal d3 mt-8 text-[var(--muted)]">
-          We run community game servers, host events, and keep a welcoming space for players of 7 Days to Die, ARK, Atlas
-          and more. No pay-to-win, no gatekeeping - just solid servers and good people.
+          We are building toward community game servers and events, and keeping a welcoming space for players of 7 Days to Die, ARK, Atlas
+          and more as we grow. No pay-to-win, no gatekeeping - just good people building something together.
         </p>
         <p className="reveal d4 mt-8 font-mono2 text-[11px] uppercase tracking-[0.3em] text-[var(--muted)]">
           Part of the Chaotic Minds Collective ecosystem - "The Method To Your Madness"
