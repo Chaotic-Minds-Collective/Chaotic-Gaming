@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Unbounded, Pirata_One, Sora, JetBrains_Mono } from "next/font/google";
 import { DISCORD_INVITE, BADGE, FAVICON } from "@/lib/site";
 import "./globals.css";
+import MobileNav from "@/components/MobileNav";
 
 const display = Unbounded({ subsets: ["latin"], variable: "--font-display" });
 const gothic = Pirata_One({ subsets: ["latin"], weight: "400", variable: "--font-gothic" });
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                className="font-mono2 hidden rounded-none border border-[rgba(0,229,255,0.5)] px-5 py-2 text-[11px] uppercase tracking-[0.2em] text-[var(--pulse)] transition hover:bg-[rgba(0,229,255,0.08)] sm:block">
               Join Discord
             </a>
+            <MobileNav />
           </div>
         </nav>
         <main>{children}</main>
