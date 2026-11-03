@@ -3,6 +3,7 @@ import { Unbounded, Pirata_One, Sora, JetBrains_Mono } from "next/font/google";
 import { DISCORD_INVITE, BADGE, FAVICON } from "@/lib/site";
 import "./globals.css";
 import MobileNav from "@/components/MobileNav";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const display = Unbounded({ subsets: ["latin"], variable: "--font-display" });
 const gothic = Pirata_One({ subsets: ["latin"], weight: "400", variable: "--font-gothic" });
@@ -66,6 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <p className="font-mono2 mt-2 text-[11px] tracking-[0.2em] text-[var(--muted)]">chaoticmindsgaming.com</p>
           </div>
         </footer>
+        <SpeedInsights />
       </body>
     </html>
   );
