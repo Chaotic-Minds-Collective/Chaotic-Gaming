@@ -11,7 +11,7 @@ The site is the front door to the community: it introduces the division, lists t
 - Next.js 14 (routes under `app/`), React 18, TypeScript
 - Tailwind CSS 3 for styling
 - Deployed on Vercel (auto-deploys from `main`)
-- No database and no server-side state: all content is static data in `lib/`
+- No database and no server-side state: shared static data lives in `lib/`, and route content (page copy) lives in `app/`
 
 ## Site structure
 
@@ -19,7 +19,7 @@ The site is the front door to the community: it introduces the division, lists t
 | --- | --- |
 | `/` | Hero, founding-member pitch, game marquee, how-to-join steps |
 | `/about` | What the division is and how it relates to the Collective |
-| `/games` | Game list with status badges and per-game server info |
+| `/games` | Game list with per-game blurbs and status badges |
 | `/discord` | Discord invite and community rules/onboarding info |
 | `/events` | Community events (game nights, contests) |
 | `/support` | Ways to support the community |
@@ -27,7 +27,7 @@ The site is the front door to the community: it introduces the division, lists t
 ## Key files
 
 - `lib/site.ts` - site-wide constants: `DISCORD_INVITE` (invite link), `BADGE` and `FAVICON` (image URLs)
-- `lib/games.ts` - the game catalog. Each entry has a `slug`, `name`, `genre`, `blurb`, a `status` of `online`, `coming-soon`, or `planned`, and `serverInfo` bullets shown on the games page. To add or change a game's status, edit this file.
+- `lib/games.ts` - the game catalog. Each entry has a `slug`, `name`, `genre`, `blurb`, a `status` of `online`, `coming-soon`, or `planned`, and `serverInfo` notes kept as catalog data (not currently rendered on the site). To add or change a game's status, edit this file.
 - `app/` - one folder per route plus `layout.tsx` (shared shell) and `globals.css`
 
 ## Brand assets
