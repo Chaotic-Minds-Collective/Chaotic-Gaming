@@ -1,0 +1,27 @@
+# Configuration for actions/labeler@v4 (used by .github/workflows/label.yml)
+# Maps labels to glob patterns of changed files.
+
+app:
+  - app/**
+
+components:
+  - components/**
+
+lib:
+  - lib/**
+
+ci:
+  - .github/**
+
+dependencies:
+  - package.json
+  - package-lock.json
+
+config:
+  - next.config.mjs
+  - tailwind.config.js
+  - postcss.config.js
+  - tsconfig.json
+
+documentation:
+  - "**/*.md"
