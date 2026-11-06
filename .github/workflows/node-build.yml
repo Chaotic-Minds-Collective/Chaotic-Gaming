@@ -1,5 +1,5 @@
 # This project is a Next.js app: the build is `next build` (npm run build).
-# This workflow was previously the GitHub "NodeJS with Webpack" template,
+# Renamed from webpack.yml - it was the GitHub "NodeJS with Webpack" template,
 # which ran `npx webpack` and always failed on this repo.
 
 name: Node build
