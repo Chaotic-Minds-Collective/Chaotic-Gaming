@@ -33,6 +33,13 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      // Browsers probe /favicon.ico by default; serve the Glitch icon there.
+      // Temporary redirect so a real .ico can replace it later without cache pain.
+      { source: "/favicon.ico", destination: "/glitch-icon.png", permanent: false },
+    ];
+  },
 };
 
 export default nextConfig;
