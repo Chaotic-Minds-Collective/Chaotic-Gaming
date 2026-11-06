@@ -6,8 +6,9 @@ export function generateStaticParams() {
   return games.map((g) => ({ game: g.slug }));
 }
 
-export default function GamePage({ params }: { params: { game: string } }) {
-  const game = games.find((g) => g.slug === params.game);
+export default async function GamePage({ params }: { params: Promise<{ game: string }> }) {
+  const { game: gameSlug } = await params;
+  const game = games.find((g) => g.slug === gameSlug);
   if (!game) notFound();
   return (
     <section className="relative overflow-hidden px-6 py-20 md:px-10">
