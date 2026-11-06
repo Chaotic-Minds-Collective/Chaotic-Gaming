@@ -6,6 +6,12 @@ export function generateStaticParams() {
   return games.map((g) => ({ game: g.slug }));
 }
 
+/**
+ * Renders a catalog game's details, or invokes notFound for an unknown slug.
+ *
+ * @param props - Page props containing the promised game route parameters.
+ * @returns The game detail page after resolving the route parameters.
+ */
 export default async function GamePage({ params }: { params: Promise<{ game: string }> }) {
   const { game: gameSlug } = await params;
   const game = games.find((g) => g.slug === gameSlug);
