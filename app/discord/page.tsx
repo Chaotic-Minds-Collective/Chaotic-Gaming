@@ -7,6 +7,13 @@ const rules = [
   "Staff decisions are final - appeal in a support ticket.",
 ];
 
+/**
+ * Discord community page.
+ *
+ * Renders the public /discord landing page: the join call-to-action, the live
+ * Discord server widget (who is online right now), the onboarding walkthrough,
+ * and the short version of the server rules.
+ */
 export default function Discord() {
   return (
     <section className="relative overflow-hidden px-6 py-20 md:px-10">
@@ -27,6 +34,24 @@ export default function Discord() {
         </div>
 
         <div className="card cut reveal d3 mt-14 text-left">
+          <span className="kicker">Live from the server</span>
+          <h2 className="mt-3 text-xl font-bold uppercase tracking-wide">Who is online right now</h2>
+          <div className="mx-auto mt-6 w-full max-w-[350px]">
+            <iframe
+              src="https://discord.com/widget?id=1565121939448533223&theme=dark"
+              className="block h-[500px] w-full"
+              sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+              style={{ border: 0 }}
+              title="Chaotic Gaming Discord widget"
+              loading="lazy"
+            />
+          </div>
+          <p className="mt-4 text-center text-xs text-[var(--muted)]">
+            Live member count straight from the Discord. Hit Join to hop in.
+          </p>
+        </div>
+
+        <div className="card cut reveal d3 mt-6 text-left">
           <span className="kicker">Onboarding</span>
           <h2 className="mt-3 text-xl font-bold uppercase tracking-wide">How joining works</h2>
           <ol className="mt-5 space-y-3">

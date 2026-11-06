@@ -16,6 +16,7 @@ const securityHeaders = [
       "font-src 'self' data: https://fonts.gstatic.com",
       "img-src 'self' data: blob:",
       "connect-src 'self' https://va.vercel-scripts.com",
+      "frame-src 'self' https://discord.com",
       "frame-ancestors 'none'",
       "base-uri 'self'",
       "form-action 'self'",
