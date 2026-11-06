@@ -4,6 +4,7 @@ import { DISCORD_INVITE, BADGE, FAVICON, BANNER } from "@/lib/site";
 import "./globals.css";
 import MobileNav from "@/components/MobileNav";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/next";
 
 const display = Unbounded({ subsets: ["latin"], variable: "--font-display" });
 const gothic = Pirata_One({ subsets: ["latin"], weight: "400", variable: "--font-gothic" });
@@ -85,6 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </footer>
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
