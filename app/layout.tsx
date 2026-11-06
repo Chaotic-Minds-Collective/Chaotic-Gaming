@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Unbounded, Pirata_One, Sora, JetBrains_Mono } from "next/font/google";
-import { DISCORD_INVITE, BADGE, FAVICON } from "@/lib/site";
+import { DISCORD_INVITE, BADGE, FAVICON, BANNER } from "@/lib/site";
 import "./globals.css";
 import MobileNav from "@/components/MobileNav";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -15,6 +15,23 @@ export const metadata = {
   description:
     "Chaotic Gaming: a brand-new gaming community forming now. 7 Days to Die, ARK, Atlas hubs are open - founding members shape our servers, rules, and events.",
   icons: { icon: FAVICON },
+  metadataBase: new URL("https://chaoticmindsgaming.com"),
+  openGraph: {
+    title: "Chaotic Gaming - Community built by gamers, for gamers",
+    description:
+      "A brand-new gaming community forming now. 7 Days to Die, ARK, and Atlas hubs are open - founding members shape our servers, rules, and events.",
+    url: "https://chaoticmindsgaming.com",
+    siteName: "Chaotic Gaming",
+    images: [{ url: BANNER, width: 1536, height: 1024, alt: "Glitch, the Chaotic Gaming mascot" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Chaotic Gaming - Community built by gamers, for gamers",
+    description:
+      "A brand-new gaming community forming now. 7 Days to Die, ARK, and Atlas hubs are open.",
+    images: [BANNER],
+  },
 };
 
 const nav = [
